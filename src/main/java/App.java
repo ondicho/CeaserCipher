@@ -2,10 +2,20 @@ import java.io.BufferedReader;
 import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+
 
 public class App {
+    private static String input;
+    private static int key;
+    public static String alphabet="abcdefghijklmnopqrstuvwxyz";
+    public static  String  output;
+
+    public App(Encode encryptedOutput, Encode encryptionKey,Encode userInput){
+        Encode input = userInput;
+        Encode key = encryptionKey;
+    }
     public static void main(String[] args) {
+
         Console myConsole=System.console();
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -13,12 +23,23 @@ public class App {
 
 
         try {
-            String userInput = bufferedReader.readLine();
+             input = bufferedReader.readLine().toLowerCase();
             System.out.println("What encryption key would you like to be used?");
-            int encryptionKey = Integer.parseInt(bufferedReader.readLine());
+            key = Integer.parseInt(bufferedReader.readLine());
+            System.out.println(input);
+            for (int i=0; i<input.length(); i++)
+            {
+                int charPosition = alphabet.indexOf(input.charAt(i));
+                int newShiftKey = (charPosition + key) % 26;
+                char newChar = alphabet.charAt(newShiftKey);
+                output = output + newChar;
+                System.out.println(output);
+            }
+            return;
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+
 }

@@ -6,7 +6,7 @@ public class Decode {
         Input=encryptedOutput;
         key=encryptionKey;
     }
-    public Encode getEncrypteOutput(){
+    public Encode getEncryptedOutput(){
         return Input;
     }
 

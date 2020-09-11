@@ -1,4 +1,5 @@
 public class Encode {
+
     private String userInput;
     private int encryptionKey;
     private String encryptedOutput;
