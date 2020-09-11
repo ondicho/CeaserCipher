@@ -8,12 +8,8 @@ public class App {
     private static String input;
     private static int key;
     public static String alphabet="abcdefghijklmnopqrstuvwxyz";
-    public static  String  output;
+    public static  String  output="";
 
-    public App(Encode encryptedOutput, Encode encryptionKey,Encode userInput){
-        Encode input = userInput;
-        Encode key = encryptionKey;
-    }
     public static void main(String[] args) {
 
         Console myConsole=System.console();
@@ -26,16 +22,17 @@ public class App {
              input = bufferedReader.readLine().toLowerCase();
             System.out.println("What encryption key would you like to be used?");
             key = Integer.parseInt(bufferedReader.readLine());
-            System.out.println(input);
-            for (int i=0; i<input.length(); i++)
-            {
-                int charPosition = alphabet.indexOf(input.charAt(i));
-                int newShiftKey = (charPosition + key) % 26;
-                char newChar = alphabet.charAt(newShiftKey);
-                output = output + newChar;
-                System.out.println(output);
-            }
-            return;
+            System.out.println("Input String :" + input);
+
+                for (int i = 0; i < input.length(); i++) {
+                    int charPosition = alphabet.indexOf(input.charAt(i));
+                    int newShiftKey = (charPosition + key) % 26;
+                    char newChar = alphabet.charAt(newShiftKey);
+                    output = output + newChar;
+                    String EncryptedString = output;
+                    System.out.println("Encrypted String :" + EncryptedString);
+                }
+                return;
 
         } catch (IOException e) {
             e.printStackTrace();
