@@ -10,7 +10,7 @@ public class App {
     public static String alphabet="abcdefghijklmnopqrstuvwxyz";
     public static  String  output="";
 
-    public static void main(String[] args) {
+
 
         Console myConsole=System.console();
 
