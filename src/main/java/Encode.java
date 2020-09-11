@@ -9,4 +9,15 @@ public class Encode {
         encryptedOutput=encryptedOutput;
     }
 
+    public String getUserInput() {
+        return userInput;
+    }
+
+    public int getEncryptionKey() {
+        return encryptionKey;
+    }
+
+    public String getEncryptedOutput() {
+        return encryptedOutput;
+    }
 }
