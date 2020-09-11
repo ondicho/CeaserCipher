@@ -1,5 +1,12 @@
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
-class EncodeTest {
+import static org.junit.Assert.*;
+
+public class EncodeTest {
+    @Test
+    public void NewEncodeObjectGetsCorrectlyCreated_true() throws Exception {
+        Encode encode = new Encode("abc",2,"cde");
+        assertEquals(true, encode instanceof Encode);
+    }
 
 }
